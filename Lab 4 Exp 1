@@ -1,0 +1,15 @@
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame(np.random.randn(10,4))
+
+# Convert some values to NaN
+df.iloc[0,1] = np.nan
+df.iloc[3,2] = np.nan
+df.iloc[5,0] = np.nan
+
+# Highlight NaN values
+styled = df.style.highlight_null(color='red')
+
+print(df)
+styled
