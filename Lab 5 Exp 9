@@ -1,0 +1,12 @@
+import matplotlib.pyplot as plt
+
+languages = ['Python','Java','C++','JavaScript']
+values = [85,70,60,75]
+
+colors = ['red','blue','green','orange']
+
+plt.bar(languages,values,color=colors)
+
+plt.title("Colored Bar Chart")
+
+plt.show()
