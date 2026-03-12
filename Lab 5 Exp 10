@@ -1,0 +1,20 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+labels = ['A','B','C']
+
+x = np.arange(len(labels))
+
+y1 = [10,15,20]
+y2 = [5,7,10]
+
+plt.bar(x,y1,label="Data1")
+plt.bar(x,y2,bottom=y1,label="Data2")
+
+plt.xticks(x,labels)
+
+plt.legend()
+
+plt.title("Stacked Bar Plot")
+
+plt.show()
