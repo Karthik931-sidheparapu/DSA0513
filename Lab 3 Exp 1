@@ -1,0 +1,18 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = {
+'Date':['2016-10-03','2016-10-04','2016-10-05','2016-10-06','2016-10-07'],
+'Volume':[1400000,1500000,1200000,1600000,1300000]
+}
+
+df = pd.DataFrame(data)
+df['Date'] = pd.to_datetime(df['Date'])
+
+filtered = df[(df['Date']>='2016-10-03') & (df['Date']<='2016-10-07')]
+
+plt.bar(filtered['Date'], filtered['Volume'])
+plt.title("Alphabet Inc Trading Volume")
+plt.xlabel("Date")
+plt.ylabel("Volume")
+plt.show()
