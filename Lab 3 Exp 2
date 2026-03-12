@@ -1,0 +1,19 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = {
+'Date':['2016-10-03','2016-10-04','2016-10-05','2016-10-06','2016-10-07'],
+'Volume':[1400000,1500000,1200000,1600000,1300000],
+'Close':[772.56,776.43,776.47,776.86,775.08]
+}
+
+df = pd.DataFrame(data)
+df['Date'] = pd.to_datetime(df['Date'])
+
+filtered = df[(df['Date']>='2016-10-03') & (df['Date']<='2016-10-07')]
+
+plt.scatter(filtered['Volume'], filtered['Close'])
+plt.xlabel("Trading Volume")
+plt.ylabel("Stock Price")
+plt.title("Volume vs Stock Price")
+plt.show()
