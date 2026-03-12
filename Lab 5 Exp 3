@@ -1,0 +1,14 @@
+import matplotlib.pyplot as plt
+
+x = []
+y = []
+
+with open("data.txt") as file:
+    for line in file:
+        a,b = line.split()
+        x.append(int(a))
+        y.append(int(b))
+
+plt.plot(x,y)
+plt.title("Line Graph from File Data")
+plt.show()
