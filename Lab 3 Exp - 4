@@ -1,0 +1,12 @@
+import pandas as pd
+
+data = {
+'Item':['Pen','Pen','Pencil','Book','Book'],
+'Units':[10,15,20,12,18]
+}
+
+df = pd.DataFrame(data)
+
+pivot = pd.pivot_table(df, values='Units', index='Item', aggfunc='sum')
+
+print(pivot)
