@@ -1,0 +1,18 @@
+import pandas as pd
+
+# Sample job history data
+data = {
+    'employee_id': [101,101,102,103,103,103,104],
+    'job_id': ['J1','J2','J1','J1','J2','J3','J1']
+}
+
+df = pd.DataFrame(data)
+
+# Count jobs per employee
+job_count = df.groupby('employee_id').size()
+
+# Employees with two or more jobs
+result = job_count[job_count >= 2]
+
+print("Employees with two or more jobs:")
+print(result.index.tolist())
