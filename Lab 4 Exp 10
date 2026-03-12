@@ -1,0 +1,9 @@
+import pandas as pd
+
+df = pd.DataFrame({
+'name':['apple','banana','grapes','pineapple']
+})
+
+result = df['name'].str.find('app')
+
+print(result)
